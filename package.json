@@ -2,6 +2,7 @@
   "name": "idemia-take-home-project",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://nandhinibrj.github.io/idemia-take-home-project",
   "dependencies": {
     "@emotion/react": "^11.11.1",
     "@emotion/styled": "^11.11.0",
@@ -33,7 +34,8 @@
     "test": "react-scripts test --env=jsdom --testURL=http://localhost:8000",
     "eject": "react-scripts eject",
     "tslint-check": "tslint-config-prettier-check ./tslint.json",
-    "test-ct": "playwright test -c playwright.config.ts"
+    "test-ct": "playwright test -c playwright.config.ts",
+    "deploy": "gh-pages -d dist"
   },
   "proxy": "http://localhost:5000",
   "eslintConfig": {
@@ -57,7 +59,8 @@
   "devDependencies": {
     "@playwright/experimental-ct-react": "^1.37.0",
     "@playwright/test": "^1.37.0",
-    "@types/cors": "^2.8.13", 
+    "@types/cors": "^2.8.13",
+    "gh-pages": "^6.0.0",
     "msw": "^1.2.3"
   },
   "jest": {
@@ -71,5 +74,4 @@
       "jest-junit"
     ]
   }
-
 }
