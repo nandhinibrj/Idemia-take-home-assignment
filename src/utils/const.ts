@@ -1,7 +1,6 @@
 import {
   Cities,
   Extras,
-  HotelReservation,
   HotelReservationWithoutId,
   Payment,
   State,
@@ -269,8 +268,8 @@ export const CITIES: Cities = {
 
 export const DEFAULT_VALUES: HotelReservationWithoutId = {
   stay: {
-    arrivalDate: String(new Date()),
-    departureDate: String(new Date().getDate() + 1),
+    arrivalDate: undefined, //String(new Date()),
+    departureDate: undefined, // String(new Date().getDate() + 1),
   },
   room: {
     roomSize: undefined,

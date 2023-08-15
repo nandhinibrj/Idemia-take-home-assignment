@@ -1,11 +1,10 @@
 import React from 'react'
 import { fireEvent, render, screen } from '@testing-library/react'
-import Reservation from './Reservation'
-import { STATES } from '../../utils/const'
-import { RECORDS } from '../../mock/records'
+import Reservation from '../component/Search/Reservation'
+import { STATES } from '../utils/const'
+import { RECORDS } from '../mock/records'
 
 const setFilteredRecord = jest.fn()
-const hasError = jest.fn()
 const setSearch = jest.fn()
 
 const renderSearchPage = () => {
@@ -18,7 +17,6 @@ const renderModalPage = () => {
       search={false}
       filteredRecord={RECORDS[0]}
       setFilteredRecord={setFilteredRecord}
-      hasError={hasError}
     />
   )
 }

@@ -1,7 +1,5 @@
 import { fireEvent, render, screen, waitFor } from '@testing-library/react'
-import Main from './main'
-import { setupServer } from 'msw/node'
-import { fetchReservationResponse } from '../mock/handler'
+import Main from '../pages/main'
 import React from 'react'
 
 const renderMain = () => {
@@ -9,10 +7,6 @@ const renderMain = () => {
 }
 
 describe('MainPage', () => {
-  const server = setupServer(...[fetchReservationResponse])
-  beforeAll(() => server.listen({ onUnhandledRequest: 'bypass' }))
-  afterEach(() => server.resetHandlers())
-  afterAll(() => server.close())
 
   it('should display search page and fields', () => {
     renderMain()

@@ -7,7 +7,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <Typography variant="h4" padding={1.5}>
+        <Typography variant="h4" padding={1}>
           Hotel Reservation System
         </Typography>
       </header>

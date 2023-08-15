@@ -26,13 +26,11 @@ type Props =
       setSearch: (search: Partial<HotelReservation>) => void
       filteredRecord?: never
       setFilteredRecord?: never
-      hasError?: never
     }
   | {
       search: false
       filteredRecord: HotelReservation
       setFilteredRecord: (records: HotelReservation) => void
-      hasError: (error: boolean) => void
       setSearch?: never
     }
 
@@ -40,7 +38,6 @@ const Reservation: React.FC<Props> = ({
   search,
   setSearch,
   filteredRecord,
-  hasError,
   setFilteredRecord,
 }) => {
   const [currentSearch, setCurrentSearch] = React.useState<Partial<HotelReservation> | undefined>()
@@ -48,67 +45,49 @@ const Reservation: React.FC<Props> = ({
   const isEmpty = (field: string, value: string | number | undefined) => {
     if (!search) {
       if (!Boolean(value)) {
-        hasError(true)
         return { error: true, helperText: `${field} cannot be empty` }
-      } else {
-        hasError(false)
       }
     }
   }
 
   const compareDates = (arrivalDate: string, departureDate: string) => {
     if (new Date(arrivalDate) >= new Date(departureDate)) {
-      // hasError(true)
       return {
         error: true,
         helperText: 'departure date cannot be later than arrival date',
       }
-    } else {
-      // hasError(false)
     }
   }
 
   const validateCharacterLength = (value: string | undefined, min: number, max: number) => {
     if (value && value.length >= min && value.length >= max) {
-      // hasError(true)
       return {
         error: true,
         helperText: `value is not in the range of ${min} / ${max}`,
       }
-    } else {
-      // hasError(false)
     }
   }
   const validateEmail = (value: string | undefined) => {
     if (value && !value.match(/\S+@\S+\.\S+/)) {
-      // hasError(true)
       return { error: true, helperText: 'email is not valid' }
-    } else {
-      // hasError(false)
     }
   }
 
   const validatePhoneNo = (value: string | undefined) => {
     if (value && !value.match(/^\(?([0-9]{3})\)?[-.]?[0-9]{3}[-.]?([0-9]{4})$/)) {
-      // hasError(true)
       return {
         error: true,
         helperText: 'phone# is not valid',
       }
-    } else {
-      // hasError(false)
     }
   }
 
   const validateZipCode = (value: string | undefined) => {
     if (value && !value?.match(/^[A-Za-z]\d[A-Za-z][ -]?\d[A-Za-z]\d$/)) {
-      // hasError(true)
       return {
         error: true,
         helperText: 'Zipcode is not valid',
       }
-    } else {
-      // hasError(false)
     }
   }
 

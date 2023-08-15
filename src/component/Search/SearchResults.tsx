@@ -6,7 +6,6 @@ import {
   GridCellParams,
   GridColDef,
   GridColumnGroupingModel,
-  GridRowParams,
 } from '@mui/x-data-grid'
 import {
   Box,
@@ -30,7 +29,6 @@ type Props = {
 const SearchResults: React.FC<Props> = ({ records, setRecords }) => {
   const [page, setPage] = React.useState<Page>()
   const [open, setOpen] = React.useState<boolean>(false)
-  const [hasError, setHasError] = React.useState<boolean>(false)
   const [filteredRecord, setFilteredRecord] = React.useState<HotelReservation>()
 
   const handleDelete = (id: number) => {
@@ -202,7 +200,6 @@ const SearchResults: React.FC<Props> = ({ records, setRecords }) => {
     setPage('Update')
     setFilteredRecord(filtered_record)
     setOpen(true)
-    setHasError(false)
   }
 
   const handleSave = () => {
@@ -215,12 +212,10 @@ const SearchResults: React.FC<Props> = ({ records, setRecords }) => {
           ])
         : setRecords([...records, filteredRecord]))
     setOpen(false)
-    setHasError(false)
   }
 
   const handleDiscard = () => {
     setRecords([...records])
-    setHasError(false)
     setOpen(false)
   }
 
@@ -298,7 +293,6 @@ const SearchResults: React.FC<Props> = ({ records, setRecords }) => {
           <DialogContent>
             <Reservation
               search={false}
-              hasError={setHasError}
               filteredRecord={filteredRecord}
               setFilteredRecord={setFilteredRecord}
             />

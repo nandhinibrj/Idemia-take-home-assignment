@@ -20,7 +20,6 @@ export const filterSearchParam = (
           return item[key as keyof PickByObject][objField as keyof (Stay | Room)] === objVal
         })
       } else {
-        console.log("herer",value)
         return item[key as keyof PickByValue] === value
       }
     })

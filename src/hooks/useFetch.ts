@@ -18,6 +18,7 @@ function useFetch() {
       setData(results as unknown as HotelReservation[])
     }
     getSearchResultData()
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   },[])
   return { isFetching, data }
 }

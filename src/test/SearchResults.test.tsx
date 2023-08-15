@@ -1,7 +1,7 @@
 import React from 'react'
 import { fireEvent, render, screen, waitFor } from '@testing-library/react'
-import SearchResults from './SearchResults'
-import { RECORDS } from '../../mock/records'
+import SearchResults from '../component/Search/SearchResults'
+import { RECORDS } from '../mock/records'
 
 const setRecords = jest.fn()
 
