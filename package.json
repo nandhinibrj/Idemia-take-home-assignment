@@ -55,7 +55,6 @@
     ]
   },
   "devDependencies": {
-    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
     "@playwright/experimental-ct-react": "^1.37.0",
     "@playwright/test": "^1.37.0",
     "@types/cors": "^2.8.13", 
